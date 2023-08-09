@@ -3,18 +3,20 @@
 list_nb = []
 N = ""
 
-def rot(list_nb, N):
-    while True:
+while True:
         liste = input("Entrez une liste de mot ou/et de nombres : ")
         if liste == "":
             break
         list_nb.append(liste)
 
     N = int(input("Saissisez un chiffre (index) : "))
-    add = list_nb[N]
-    list_nb.insert(0, add)
-    list_nb.pop(N+1)
-    print(list_nb)
 
+def rot(list_nb, N):
+    rot_list = []
+    buffer = ""
+    for element, n in enumerate(list_nb):
+        buffer= element
+        element = rot_list.appen(list_nb[n-1])
+    return rot_list
 
 rot(list_nb, N)
